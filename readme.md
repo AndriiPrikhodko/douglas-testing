@@ -1,4 +1,4 @@
-## Project Weathershopper
+## Project Douglas
 ### Overview
 This project is a sample application that demonstrates how to use Playwright, TypeScript, and Docker to run end-to-end tests for a e-commerce web application.
 
