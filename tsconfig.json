@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "paths": {
+        "@book/*": ["./src/book/*"],
+        "@myTypes/*": ["./src/types/*"],
+        "@actions/*": ["src/pages/actions/*"],
+        "@utils/*": ["./src/utilities/*"],
+        "@test-data/*": ["./src/test-data/*"]
+      },
+    "noEmit": true,
+    "types": ["expect-playwright", "@playwright/test", "@types/node"]
+    },
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "module",
+    "include": [
+        "./src/",
+        "*/*.json"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "node_modules/expect-playwright/global.d.ts",
+    ]
+}

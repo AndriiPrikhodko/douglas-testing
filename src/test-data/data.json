@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Parfum Duftset",
+        "filter": {
+            "Produktart": "Duftset",
+            "Marke": "Abercrombie & Fitch",
+            "Geschenk für": "Valentinstag",
+            "Highlights": {
+                "Sale": false,
+                "NEU": false,
+                "Limitiert": true
+            }
+        }
+    },
+    {
+        "name": "Parfum Eau de Parfum",
+        "filter": {
+            "Produktart": "Eau de Parfum",
+            "Marke": "AEMIUM",
+            "Geschenk für": "Valentinstag",
+            "Highlights": {
+                "Sale": true,
+                "NEU": false,
+                "Limitiert": false
+            }
+        }
+    }
+]
