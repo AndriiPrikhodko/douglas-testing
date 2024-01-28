@@ -17,8 +17,8 @@ To get started with this project, you will need to have Node.js and Docker insta
 2. Open a terminal window and navigate to the root directory of the project.
 3. Run npm ci to install all dependencies needed to run your tests.
 4. Run docker pull mcr.microsoft.com/playwright:v1.39.0-jammy to pull the  Playwright Docker image.
-5. Run docker build -t weathershopper-playwright . to build the Docker image for your project.
-6. Run docker run weathershopper-playwright to start a container from the weathershopper-playwright image and run the tests inside the container.
+5. Run docker build -t test-playwright . to build the Docker image for your project.
+6. Run docker run test-playwright to start a container from the test-playwright image and run the tests inside the container.
 
 ### Contributing
 If you would like to contribute to this project, please fork the repository and submit a pull request. We welcome contributions of all kinds, including bug fixes, new features, and documentation improvements.
