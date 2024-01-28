@@ -6,7 +6,7 @@ import ParfumPage from '../pages/parfum.page'
 import Coockeis from '../pages/components/coockies'
 import extractActiveFilters from '../utilities/activeFilters'
 
-testData.map(data => test(`${data.name}`, async ({page}) => {
+(testData as IData[]).map(data => test(`${data.name}`, async ({page}) => {
     const homePage = new HomePage(page)
     const parfumPage = new ParfumPage(page)
     const coockeis = new Coockeis(page)

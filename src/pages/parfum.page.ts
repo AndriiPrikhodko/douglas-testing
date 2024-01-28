@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test'
 
-export default class ParfumPage {
+export default class ParfumPage implements IPage {
     protected readonly page: Page
     public url: string = 'https://www.douglas.de/de/c/parfum/01'
     public selectors = {
@@ -18,7 +18,12 @@ export default class ParfumPage {
         this.page = page
     }
 
-    async applyFilter (name, value) {
+    /**
+     *
+     * @param name filter name
+     * @param value filter value
+     */
+    async applyFilter (name: string, value:string) {
         const locatorByName = this.page
             .locator(this.selectors.filter, {hasText: name})
         await locatorByName.click()
@@ -27,7 +32,7 @@ export default class ParfumPage {
         await this.page.click(this.selectors.close)
     }
 
-    async applyHighlights(options) {
+    async applyHighlights(options: IData['filter']['Highlights']) {
         const highlights = this.page
             .locator(this.selectors.filter, {hasText: 'Highlights'})
         await highlights.click()
@@ -39,7 +44,12 @@ export default class ParfumPage {
         await this.page.click(this.selectors.close)
     }
 
-    async applyFilters(filters) {
+    /**
+     *
+     * @param filters json object with filters
+     * @returns
+     */
+    async applyFilters(filters: IData['filter']) {
         return Object.keys(filters).reduce(async (acc, key) =>{
             if(key !== 'Highlights') {
                 await acc.then(() => this.applyFilter(key, filters[key]))
@@ -51,7 +61,12 @@ export default class ParfumPage {
         }, Promise.resolve())
     }
 
-    async getFilters(expectedCount) {
+    /**
+     *
+     * @param expectedCount expected count of filters to be present
+     * @returns
+     */
+    async getFilters(expectedCount: number): Promise<string[]> {
         await this.page.waitForFunction(({selector, count}) => {
             return document.querySelectorAll(selector).length === count
         }, {selector: this.selectors.selectedFilters, count: expectedCount})
