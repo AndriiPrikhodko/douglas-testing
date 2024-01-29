@@ -5,6 +5,7 @@ const config: PlaywrightTestConfig = {
     testDir: '.',
     timeout: 60 * 1000,
     retries: 1,
+    workers: 2,
     projects: [
         {
             name: 'Desktop Chrome',

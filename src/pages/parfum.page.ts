@@ -26,8 +26,11 @@ export default class ParfumPage implements IPage {
     async applyFilter (name: string, value:string) {
         const locatorByName = this.page
             .locator(this.selectors.filter, {hasText: name})
+        await locatorByName.scrollIntoViewIfNeeded()
         await locatorByName.click()
         const option = this.page.locator(this.selectors.filterOption, {hasText: value})
+        await option.waitFor({state: 'attached'})
+        await option.scrollIntoViewIfNeeded()
         await option.click()
         await this.page.click(this.selectors.close)
     }
